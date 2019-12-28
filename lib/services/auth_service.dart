@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:instagram_clone/screens/feed_screen.dart';
+import 'package:instagram_clone/screens/login_screen.dart';
 
 class AuthService {
 
@@ -31,4 +32,15 @@ class AuthService {
       print(e);
     }
   }
+
+  static void logout(BuildContext context){
+    _auth.signOut();
+    Navigator.pushReplacementNamed(context, LoginScreen.id);
+  }
+
+  static void login(BuildContext context, String email, String password){
+    _auth.signInWithEmailAndPassword(email: email,password: password);
+    Navigator.pushReplacementNamed(context, FeedScreen.id);
+  }
+
 }
