@@ -63,15 +63,15 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget backToSignupBtn() {
+  Widget goToSignupBtn() {
     return Container(
       width: 250,
       child: FlatButton(
         padding: EdgeInsets.all(10),
-        onPressed: () => Navigator.pop(context),
+        onPressed: () => Navigator.pushNamed(context,SignupScreen.id),
         color: Colors.blue,
         child: Text(
-          "Back to Signup",
+          "Go to Signup",
           style: TextStyle(color: Colors.white, fontSize: 18),
         ),
       ),
@@ -104,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     signinBtn(),
                     SizedBox(height: 20),
-                    backToSignupBtn(),
+                    goToSignupBtn(),
                   ],
                 ),
               )
