@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone/screens/login_screen.dart';
 import 'package:instagram_clone/screens/signup_screen.dart';
 import 'package:instagram_clone/screens/feed_screen.dart';
+import 'package:instagram_clone/screens/home_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
         builder: (BuildContext context, snapshot) {
           // if user is logged in then this return true
           if (snapshot.hasData) {
-            return FeedScreen();
+            return HomeScreen();
           } else {
             return LoginScreen();
           }
