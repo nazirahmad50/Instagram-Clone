@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         builder: (BuildContext context, snapshot) {
           // if user is logged in then this return true
           if (snapshot.hasData) {
-            return HomeScreen();
+            return HomeScreen(userId: snapshot.data.uid,); // uid of current user signed in
           } else {
             return LoginScreen();
           }
